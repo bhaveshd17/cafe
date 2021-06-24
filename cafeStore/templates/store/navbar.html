@@ -1,49 +1,93 @@
 {% load static %}
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+<nav class="navbar navbar-expand-lg navbar-light bg-light m-0">
+
     <div class="container">
-        
         <a class="navbar-brand m-0 p-0" href="#">
-            <strong>Bhavesh's Cafe</strong>
+            <strong style="color: #e43434;">Bhavesh's Cafe</strong>
         </a>
+        <div class="navbar-nav m-0 p-0 d-flex justify-content-center" id="phone-nav">
+            <div class="nav-item">
+                <a class="nav-link m-0 p-0" href="#">
+                    <i class="fa fa-bell fa-lg mx-2"></i>
+                </a>
+            </div>
+            <div class="nav-item">
+                <a class="nav-link m-0 p-0" href="">
+                    <i class="fas fa-user-circle fa-lg mx-2 my-0"></i>
+                </a>
+            </div>
 
+        </div>
 
+    </div>
 
+</nav>
+<nav class="navbar navbar-expand-lg navbar-light bg-light m-0">
+    <div class="container"><a href=""></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item ml-2">
-                    <a class="nav-link" href="">
-                        <i class="fa fa-coffee fa-lg m-2"></i>
-                    </a>
-                </li>
-                <li class="nav-item ml-2">
-                    <a class="nav-link" href="#">
-                        <i class="fa fa-bell fa-lg m-2"></i>
-                    </a>
-                </li>
-                <li class="nav-item ml-2">
-                    <a class="nav-link" href="">
-                        <i class="fas fa-sign-out-alt fa-lg m-2"></i>
-                    </a>
-                </li>
-                <li class="nav-item dropdown ml-2">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      Hello, admin!
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      <a class="dropdown-item" href="#">Action</a>
-                      <a class="dropdown-item" href="#">Another action</a>
-                      <div class="dropdown-divider"></div>
-                      <a class="dropdown-item" href="#">Something else here</a>
-                    </div>
-                  </li>
-                
 
+        <div class="collapse navbar-collapse m-0 p-0" id="navbarSupportedContent">
+
+            <div class="mx-5">
+                <div class="ml-5 pl-5" id="adjust-margin-1">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item ml-3">
+                            <a class="nav-link m-0 p-0" href="">
+                                COFFEE & TEA
+                            </a>
+                        </li>
+                        <li class="nav-item ml-3">
+                            <a class="nav-link m-0 p-0" href="">
+                                BEVERAGES
+                            </a>
+                        </li>
+                        <li class="nav-item ml-3">
+                            <a class="nav-link m-0 p-0" href="">
+                                MUNCHIES
+                            </a>
+                        </li>
+                        <li class="nav-item ml-3">
+                            <a class="nav-link m-0 p-0" href="">
+                                DESERT
+                            </a>
+                        </li>
+                        <li class="nav-item ml-3" id="nav-cart" hidden>
+                            <a class="nav-link my-0 p-0" href="">
+                                CART 
+                            </a>
+                            <p id="cart-total">15</p>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+
+
+           
+            <form class="ml-5 pl-5 form-inline my-0 py-0 " id="adjust-margin-2">
+                <div class="input-group">
+                    
+                    <input type="text" name="to_search" class="form-control" placeholder="Search here.." aria-label="" aria-describedby="basic-addon1">
+                    <div class="input-group-prepend">   
+                        <button class="btn btn-danger" type="submit" ><i class="fas fa-search" style="color: white;"></i></button>
+                    </div>
+                  </div>
+            </form>
+            <ul class="navbar-nav ml-auto" id="cart-ul">
+                <li class="nav-item active d-flex">
+                    <a class="nav-link mx-0 px-0" id="cart-icon" style="color: grey;" href="#">
+                        <i class="fas fa-shopping-cart fa-lg mx-2 my-0"></i>
+                    </a>
+                    <p id="cart-total">15</p>
+                </li>
             </ul>
+
         </div>
     </div>
 </nav>
+
+<script src="{% static 'js/navbar.js' %}"></script>

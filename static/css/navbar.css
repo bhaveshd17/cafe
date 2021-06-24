@@ -1,0 +1,30 @@
+@media (max-width: 982px) {
+    #phone-nav {
+        display: flex;
+        width: 100px;
+        align-items: center;
+    }
+
+    #phone-nav a {
+        display: block;
+        color: grey;
+    }
+}
+
+#cart-icon {
+    width: 25px;
+    display: inline-block;
+    margin-top: 8px;
+}
+
+#cart-total {
+    display: block;
+    text-align: center;
+    color: #fff;
+    background-color: #e43434;
+    width: 20px;
+    height: 22px;
+    border-radius: 50%;
+    font-size: 14px;
+    margin-right: 15px;
+}
