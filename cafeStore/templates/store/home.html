@@ -24,21 +24,15 @@
     </div>
     <div class="col-md-8">
         <div class="row">
+          {% for product in product_obj %}
             <div class="col-md-4">
                 <div class="card card-body">
-
+                  <img class="card-img-top" src="{{product.image.url}}" alt="Card image cap">
                 </div>
+                <div class="card-title">{{product.name}}</div>
             </div>
-            <div class="col-md-4">
-                <div class="card card-body">
-
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card card-body">
-
-                </div>
-            </div>
+          {% endfor %}
+           
         </div>
     </div>
 </div>
