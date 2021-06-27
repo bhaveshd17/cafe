@@ -28,3 +28,8 @@
     font-size: 14px;
     margin-right: 15px;
 }
+
+.form-control:focus {
+    border-color: #e43434;
+    box-shadow: inset 0 1px 1px #42424213, 0 0 8px #e43434;
+}

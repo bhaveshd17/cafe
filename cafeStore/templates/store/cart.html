@@ -1,0 +1,91 @@
+{% extends 'store/layout.html' %}
+{% block title %}Home{% endblock title %}
+{% load static %}
+{% block content %}
+<style>
+    .cart-product-name{
+        color:  #212529;
+    }
+    .cart-product-name:hover{
+        color:  #e43434;
+    }
+</style>
+<h4 class="text-danger my-5">Shopping Cart</h4>
+<div class="row">
+    <div class="col-md-8 col-sm-6 col-xs-6">
+        <div class="card card-body mb-3" style="width: 100%;">
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col"></th>
+                        <th scope="col">Item</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Qty.</th>
+                        <th scope="col">SubTotal</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in items %}
+
+                    <tr>
+                        <td><img class="card-img-top" src="{{item.product.image.url}}" alt="..." style="width: 60px; height: 60px;"></td>
+                        <td><a href="" class="cart-product-name" style="text-decoration: none;">{{item.product.name}}</a></td>
+                        <td>{{item.product.discountPrice}}</td>
+                        <td>{{item.quantity}}</td>
+                        <td>{{item.get_total}}</td>
+        
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <div class="d-flex">
+            <a href="{% url 'home' %}" class="btn btn-outline-danger">Continue Shopping</a>
+        </div>
+    </div>
+
+    <div class="col-md-4 col-sm-6 col-xs-6">
+        <div class="card card-body" style="background-color: #f8f9fa;">
+            <div class="cart-title font-weight-lighter">
+                <h4 class="text-center mb-2">Summary</h4>
+                <table class="table">
+                    <tbody>
+                      <tr>
+                        <td scope="row">Subtotal (Excl. Tax)</td>
+                        <td><span class="float-right">₹{{order.get_cart_total}}</span></td>
+                      </tr>
+                      <tr>
+                        <td scope="row">Subtotal (Incl. Tax)</td>
+                        <td><span class="float-right">₹{{order.get_cart_total|add:48|floatformat:2}}</span></td>
+                      </tr>
+                      <tr>
+                        <td scope="row">Shipping</td>
+                        <td><span class="float-right">₹30.00</span></td>
+                      </tr>
+                      <tr>
+                        <td scope="row">Tax</td>
+                        <td><span class="float-right">₹48.00</span></td>
+                      </tr>
+                      <tr class="text-success">
+                        <td scope="row">Total Save</td>
+                        <td><span class="float-right">₹{{save}}</span></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <!-- <a href="">Apply Coup</a> -->
+                  <hr>
+            </div>
+            <div class="d-flex justify-content-around mb-3">
+                <h5>Order Total</h5>
+                <h5>{{order.get_cart_total|add:78|floatformat:2}}</h5>
+            </div>
+            <div>
+                <a href="" class="btn btn-outline-secondary w-100">Checkout</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
