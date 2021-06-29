@@ -19,7 +19,7 @@ const addCookieItem = (productId, action)=>{
     if(action === 'add'){
         if(cart[productId] === undefined){
             cart[productId] = {'quantity':1}
-            console.log(cart)
+            // console.log(cart)
         }
         else{
             cart[productId]['quantity'] += 1
@@ -66,6 +66,7 @@ const updateUserOrder = (productId, action)=>{
 }
 
 const update_cart = document.getElementsByClassName("update-cart");
+console.log(update_cart)
 for(let i=0 ; i < update_cart.length ;i++){
     update_cart[i].addEventListener('click', function(){
         let productId = this.dataset.product;

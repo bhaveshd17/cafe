@@ -40,4 +40,15 @@ def cart(request):
     content = {'items':items, 'cartItems':cartItems, 'order':order, 'save':data['save']}
     return render(request, 'store/cart.html', content)
 
+def userInfo(request, pk):
+    data = cartData(request)
+    cartItems = data['cartItems']
+    content = {'cartItems':cartItems}
+    return render(request, 'store/userinfo.html', content)
 
+#auth
+def handleLogin(request):
+    return render(request, 'auth/login.html')
+
+def handleSignIp(request):
+    return render(request, 'auth/signin.html')
